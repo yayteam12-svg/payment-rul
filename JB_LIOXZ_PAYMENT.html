@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JB LIOXZ • PAYMENT</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;800;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{min-height:100vh;background:#030308;background-image:linear-gradient(rgba(0,240,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(0,240,255,.06) 1px,transparent 1px);background-size:28px 28px;font-family:'Rajdhani',sans-serif;color:#fff;display:flex;justify-content:center;padding:16px}
+  .wrap{width:100%;max-width:430px;position:relative;z-index:2}
+  .top{display:flex;justify-content:space-between;align-items:center;padding:8px 4px 10px}
+  .brand{font-family:'Orbitron',sans-serif;font-weight:900;font-size:26px;letter-spacing:1px;line-height:1}
+  .brand .white{color:#fff;text-shadow:0 0 12px #fff,0 0 25px #00f0ff}.brand .pink{color:#ff2ea6;text-shadow:0 0 12px #ff2ea6,0 0 30px #ff2ea6}
+  .status{font-family:'Orbitron',sans-serif;font-size:11px;letter-spacing:2px;color:#9ca3af;text-align:center;margin:4px 0 16px}.status b{color:#00f0ff;text-shadow:0 0 12px #00f0ff}
+  .banner{border:1.5px solid #00f0ff;border-radius:14px;overflow:hidden;box-shadow:0 0 20px rgba(0,240,255,.35),inset 0 0 20px rgba(0,240,255,.1);background:#000;position:relative}
+  .banner img{width:100%;height:150px;object-fit:cover;display:block;filter:contrast(1.1) saturate(1.2)}
+  .banner-label,.banner-label2{position:absolute;top:8px;font-family:'Orbitron',sans-serif;background:rgba(0,0,0,.7);padding:5px 8px;line-height:1.4}
+  .banner-label{left:10px;font-size:9px;letter-spacing:1.5px;border:1px solid rgba(0,240,255,.5);color:#00f0ff}
+  .banner-label2{right:10px;font-size:8px;letter-spacing:1px;border:1px solid rgba(255,46,166,.5);color:#ff2ea6;text-align:right}
+  .big-title{text-align:center;margin:20px 0 6px;font-family:'Orbitron',sans-serif;font-weight:900;font-size:clamp(24px,7vw,32px);line-height:1.1;letter-spacing:1px}
+  .big-title .w{color:#fff;text-shadow:0 0 15px #fff}.big-title .c{color:#00f0ff;text-shadow:0 0 15px #00f0ff,0 0 30px #00f0ff}.big-title .p{color:#ff2ea6;text-shadow:0 0 15px #ff2ea6,0 0 30px #ff2ea6}
+  .sub{text-align:center;color:#9ca3af;font-size:16px;line-height:1.4;font-weight:600}
+  .sub2{text-align:center;margin-top:26px;font-family:'Orbitron',sans-serif;font-weight:800;font-size:22px;letter-spacing:2px}.sub2 .c{color:#00f0ff;text-shadow:0 0 12px #00f0ff}
+  .sub2-small{text-align:center;color:#9ca3af;letter-spacing:2px;font-size:12px;margin-top:4px;font-weight:600}
+  .tabs{display:flex;gap:10px;margin:18px 0}.tab{flex:1;padding:13px 6px;font-family:'Orbitron',sans-serif;font-weight:800;font-size:12px;letter-spacing:1px;cursor:pointer;background:transparent;color:#9ca3af;border:1px solid #374151;border-radius:2px}
+  .tab.active{background:#00f0ff;color:#000;border-color:#00f0ff;box-shadow:0 0 20px rgba(0,240,255,.6)}
+  .box{display:none}.box.active{display:block;animation:pop .3s ease}@keyframes pop{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+  .card{border:1px solid #1f2937;background:rgba(10,10,20,.9);padding:18px;margin-top:6px;position:relative}.card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(#00f0ff,#ff2ea6)}
+  .label{font-family:'Orbitron',sans-serif;font-size:11px;letter-spacing:2px;color:#9ca3af}.card-title{font-family:'Orbitron',sans-serif;font-weight:800;font-size:19px;letter-spacing:1px;margin:8px 0}
+  .qr-wrap{background:#fff;padding:10px;border-radius:8px;margin:10px 0}.qr-wrap img{width:100%;display:block;border-radius:4px}
+  .price{font-family:'Orbitron',sans-serif;font-weight:900;font-size:22px;color:#00f0ff;text-shadow:0 0 15px #00f0ff;margin:6px 0}.price small{font-size:12px;color:#9ca3af;text-shadow:none;letter-spacing:1px}
+  .desc{border-left:2px solid #00f0ff;background:rgba(0,240,255,.07);padding:10px 12px;font-size:14px;color:#d1d5db;line-height:1.5;margin:10px 0}
+  .dana-num{font-family:'Orbitron',sans-serif;font-weight:900;font-size:clamp(17px,5vw,22px);color:#00f0ff;text-shadow:0 0 15px #00f0ff;letter-spacing:.5px}
+  .btn-copy{width:100%;margin-top:12px;background:#00f0ff;color:#000;border:none;padding:13px;font-family:'Orbitron',sans-serif;font-weight:800;letter-spacing:1px;cursor:pointer;box-shadow:0 0 20px rgba(0,240,255,.5)}
+  .steps{background:#05050f;border:1px solid #1f2937;padding:14px;font-size:14px;line-height:1.7;color:#d1d5db;margin-top:12px}.steps b{color:#ff2ea6}
+  .info{display:flex;gap:8px;margin-top:12px}.info div{flex:1;min-width:0;border:1px solid #374151;padding:10px;text-align:center;background:#0a0a18;overflow-wrap:anywhere}
+  .info small{display:block;color:#9ca3af;font-size:10px;letter-spacing:1px;font-family:'Orbitron',sans-serif}.info b{font-size:12px;color:#fff}
+  .btn-wa{display:block;margin-top:14px;text-align:center;text-decoration:none;background:linear-gradient(90deg,#00f0ff,#ff2ea6);color:#000;padding:14px;font-family:'Orbitron',sans-serif;font-weight:900;letter-spacing:1px;font-size:14px;box-shadow:0 0 25px rgba(255,46,166,.4)}
+  .btn-wa small{display:block;font-family:'Rajdhani',sans-serif;font-size:13px;font-weight:700;margin-top:2px}
+  .footer{text-align:center;color:#6b7280;font-size:11px;margin:14px 0 20px;line-height:1.5;letter-spacing:.5px}.nmid{display:inline-block;border:1px solid #374151;padding:4px 10px;font-size:11px;letter-spacing:1px;color:#9ca3af;margin-top:6px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <div class="brand"><span class="white">JB</span><span class="pink">LIOXZ</span></div>
+    <div style="font-family:'Orbitron';font-size:10px;color:#00f0ff;border:1px solid #00f0ff;padding:5px 8px">● ONLINE</div>
+  </div>
+  <div class="status">STATUS: <b>SIAP TRANSAKSI</b></div>
+  <div class="banner">
+    <img src="https://i.ibb.co.com/G4hP460X/IMG-20261024-WA5088.jpg" alt="JB LIOXZ" onerror="this.style.display='none';this.parentElement.style.minHeight='150px'">
+    <div class="banner-label">JB LIOXZ STORE<br>FAST • SAFE • TRUSTED</div>
+    <div class="banner-label2">PAYMENT<br>QRIS & DANA<br>& MORE</div>
+  </div>
+  <div class="big-title"><span class="w">PAYMENT</span> <span class="c">JB</span> <span class="p">PREMIUM</span></div>
+  <div class="sub">Silahkan pilih metode pembayaran yang anda inginkan.<br>Auto-chat WhatsApp dengan detail pesanan lengkap.</div>
+  <div class="sub2">PILIH <span class="c">PAYMENT</span></div>
+  <div class="sub2-small">SILAHKAN PILIH METODE PEMBAYARAN!</div>
+  <div class="tabs">
+    <button class="tab active" onclick="showTab('qris',this)">QRIS</button>
+    <button class="tab" onclick="showTab('dana',this)">DANA</button>
+  </div>
+  <div id="qris" class="box active">
+    <div class="card">
+      <div class="label">[ PAKET ]</div><div class="card-title">PAKET QRIS - ALL PAYMENT</div>
+      <div class="price">SCAN QRIS <small>/ ALL APP</small></div>
+      <div class="qr-wrap"><img src="https://i.ibb.co.com/NgThz273/qr-ID1025419167842-21-09-26-1789968541-1789968542992.jpg" alt="QRIS" onerror="this.alt='Gambar QRIS gagal dimuat';this.style.minHeight='80px'"></div>
+      <div class="desc">Scan pakai DANA / GoPay / OVO / ShopeePay / M-Banking. Satu QRIS untuk semua. Cek nama <b style="color:#fff">Rul store</b>.</div>
+      <div style="text-align:center"><span class="nmid">NMID : ID1025419167842 • A01</span></div>
+      <div class="steps">CARA BAYAR QRIS<br>1. Buka Aplikasi Berlogo QRIS<br>2. Scan QR di atas<br>3. Cek nama <b>Rul store</b><br>4. Bayar &amp; Screenshot Bukti<br>5. Kirim bukti ke <b>085822241165</b></div>
+    </div>
+  </div>
+  <div id="dana" class="box">
+    <div class="card">
+      <div class="label">[ PAKET ]</div><div class="card-title">PAKET DANA - TRANSFER</div>
+      <div class="price">DANA <small>/ RUL STORE</small></div>
+      <div style="margin:10px 0 2px;font-size:12px;letter-spacing:2px;color:#9ca3af;font-family:'Orbitron'">NOMOR DANA</div>
+      <div class="dana-num" id="danaNum">+62 856-5215-0124</div><div style="font-size:13px;color:#9ca3af">a.n RUL STORE</div>
+      <button class="btn-copy" onclick="copyDana()">📋 SALIN NOMOR DANA</button>
+      <div class="desc">Transfer ke nomor DANA di atas. Pastikan nama penerima <b style="color:#fff">RUL STORE</b> sebelum kirim.</div>
+      <div class="steps">CARA BAYAR DANA<br>1. Salin nomor DANA di atas<br>2. Buka DANA &gt; Kirim &gt; Ke Nomor HP<br>3. Tempel nomor <b>+62 856-5215-0124</b><br>4. Transfer &amp; Screenshot Bukti<br>5. Kirim bukti ke <b>085822241165</b></div>
+    </div>
+  </div>
+  <div class="info"><div><small>DANA</small><b>+62 856-5215-0124</b></div><div><small>BUKTI KE WA</small><b>085822241165</b></div></div>
+  <a class="btn-wa" href="https://wa.me/6285822241165?text=Halo%20Admin%20JB%20LIOXZ%2C%20saya%20sudah%20transfer%20ke%20DANA%20%2B62%20856-5215-0124%2C%20ini%20bukti%20saya" target="_blank" rel="noopener noreferrer">💬 KIRIM BUKTI KE WA<small>085822241165 • Klik langsung kebuka WA Admin</small></a>
+  <div class="footer">JB LIOXZ • RUL STORE • Be Smart Buyer<br>Cek aplikasi penyelenggara di: www.aspi-qris.id</div>
+</div>
+<script>
+function showTab(id,btn){
+  document.querySelectorAll('.box').forEach(e=>e.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(e=>e.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+}
+async function copyDana(){
+  const number='085652150124';
+  try {
+    if(navigator.clipboard && window.isSecureContext){
+      await navigator.clipboard.writeText(number);
+    } else {
+      const field=document.createElement('textarea');
+      field.value=number;field.style.position='fixed';field.style.opacity='0';
+      document.body.appendChild(field);field.select();
+      const ok=document.execCommand('copy');field.remove();
+      if(!ok) throw new Error('copy failed');
+    }
+    alert('Nomor DANA tersalin: '+number);
+  } catch(e) {
+    alert('Tidak bisa menyalin otomatis. Salin nomor ini: '+number);
+  }
+}
+</script>
+</body>
+</html>
